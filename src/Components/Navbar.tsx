@@ -1,7 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom"
 import { assets } from "../assets/assets"
 import { useState } from "react"
-import { FaChevronDown } from "react-icons/fa";
+import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
+import { FaX } from "react-icons/fa6";
 
 const Navbar = () => {
     const navigate = useNavigate()
@@ -10,9 +11,9 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false);
 
     return (
-        <nav className="bg-zinc-800 h-20 w-full flex justify-between items-center text-gray-300 px-12 py-2">
-            <NavLink to={"/"}>
-                <img className="w-32" src={assets.logo} alt="image" />
+        <nav className="bg-zinc-800 h-20 w-full flex justify-between items-center text-gray-300 px-8 md:px-12 py-2">
+            <NavLink className="z-50" to={"/"}>
+                <img className="w-32 z-50" src={assets.logo} alt="image" />
             </NavLink>
             <ul className="hidden md:flex gap-8">
                 {
@@ -37,7 +38,18 @@ const Navbar = () => {
                         </div>
                         : <button onClick={() => navigate("/login")} className="border border-gray-200 px-6 py-2 text-sm hover:bg-white hover:text-black transition-all duration-300">Create Account</button>
                 }
+
             </div>
+            <div className="z-50 md:hidden" onClick={() => setMenu(prev => !prev)}>
+                {menu ? <FaTimes /> : <FaBars />}
+            </div>
+            <ul className={menu ? "absolute flex flex-col md:hidden top-0 right-0 items-center text-center justify-center gap-8 h-screen w-full bg-black z-20" : "hidden"}>
+                {
+                    ["HOME", "SERVICES", "ABOUT US", "CONTACT"].map((item, index) => (
+                        <li key={index}><NavLink onClick={() => setMenu(prev => !prev)} className={({ isActive }) => ` ${isActive ? "text-green-700 text-sm font-bold" : "text-gray-300 text-sm font-semibold"}`} to={index === 0 ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}>{item}</NavLink> <hr className="hidden" /></li>
+                    ))
+                }
+            </ul>
         </nav>
     )
 }
