@@ -1,3 +1,4 @@
+import Banner from "../Components/Banner"
 import Hero from "../Components/Hero"
 import Services from "../Components/services"
 
@@ -7,6 +8,7 @@ const HomePage = () => {
         <>
             <Hero />
             <Services />
+            <Banner />
         </>
     )
 }
