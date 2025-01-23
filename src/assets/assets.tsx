@@ -4,11 +4,11 @@ import styling from "./styling.png"
 import trim from "./Trim.png"
 import logo from "./Logo.png"
 import profile_pic from "./profile_pic.png"
-import banner from "./banner.jpg"
+import about from "./about.jpg"
 
 export const assets = {
+    about,
     profile_pic,
-    banner,
     logo,
     scissors,
     shave,

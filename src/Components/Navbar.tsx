@@ -2,7 +2,6 @@ import { NavLink, useNavigate } from "react-router-dom"
 import { assets } from "../assets/assets"
 import { useState } from "react"
 import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
 
 const Navbar = () => {
     const navigate = useNavigate()
@@ -18,7 +17,7 @@ const Navbar = () => {
             <ul className="hidden md:flex gap-8">
                 {
                     ["HOME", "SERVICES", "ABOUT US", "CONTACT"].map((item, index) => (
-                        <li key={index}><NavLink className={({ isActive }) => ` ${isActive ? "text-green-700 text-sm font-bold" : "text-gray-300 text-sm font-semibold"}`} to={index === 0 ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}>{item}</NavLink> <hr className="hidden" /></li>
+                        <li key={index}><NavLink className={({ isActive }) => ` ${isActive ? "text-yellow-700 text-sm font-bold" : "text-gray-300 text-sm font-semibold"}`} to={index === 0 ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}>{item}</NavLink> <hr className="hidden" /></li>
                     ))
                 }
             </ul>

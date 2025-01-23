@@ -1,10 +1,11 @@
-import React from 'react'
+import Hero from "../Components/hero"
+
 
 const HomePage = () => {
     return (
-        <section>
-            Home
-        </section>
+        <>
+            <Hero />
+        </>
     )
 }
 
