@@ -14,23 +14,27 @@ export const assets = {
     shave,
     styling,
     trim
-} 
+}
 
 export const services = [
     {
-        service: "HAIRCUT",
+        type: "HAIRCUT",
+        service: "Always look your best with our professional barbers and stylist.",
         image: scissors
     },
     {
-        service: "SHAVING",
+        type: "SHAVING",
+        service: "Always look your best with our professional barbers and stylist.",
         image: shave
     },
     {
-        service: "STYLING",
+        type: "STYLING",
+        service: "Always look your best with our professional barbers and stylist.",
         image: styling
     },
     {
-        service: "TRIMMING",
+        type: "TRIMMING",
+        service: "Always look your best with our professional barbers and stylist.",
         image: trim
     }
 ]
