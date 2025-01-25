@@ -6,7 +6,23 @@ import logo from "./Logo.png"
 import profile_pic from "./profile_pic.png"
 import about from "./about.jpg"
 
-export const assets = {
+export interface ServiceType{
+    type: string;
+    service: string;
+    image: string;
+}
+
+export interface assetsType {
+    about: string;
+    profile_pic: string;
+    logo: string;
+    scissors: string;
+    shave: string;
+    styling: string;
+    trim: string;
+}
+
+export const assets: assetsType = {
     about,
     profile_pic,
     logo,
@@ -16,7 +32,7 @@ export const assets = {
     trim
 }
 
-export const services = [
+export const services: ServiceType[] = [
     {
         type: "HAIRCUT",
         service: "Always look your best with our professional barbers and stylist.",
