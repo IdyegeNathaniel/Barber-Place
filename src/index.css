@@ -9,6 +9,6 @@
         font-family: "san-serif", outfit;
     }
 }
-li:active{
-    color: red;
-} 
+::-webkit-scrollbar {
+    @apply hidden;
+}

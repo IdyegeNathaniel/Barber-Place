@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {gridTemplateColumns: {"60/40" : "60% 40%",},},
   },
   plugins: [],
 }

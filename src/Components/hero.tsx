@@ -12,7 +12,7 @@ const Hero = () => {
                 <p className="text-yellow-700 text-4xl md:text-6xl font-extrabold">FEEL YOUR NEW </p>
                 <p className="text-white text-4xl md:text-6xl font-bold"> STYLE</p>
                 <hr className="w-1/6 h-0.5 my-5" />
-                <p className="text-sm md:text-lg text-white leading-3 font-extralight">Come by for a clean haircut, shave and feel good.</p>
+                <p className="text-sm md:text-lg text-white leading-3 font-extralight">Come by for a clean haircut, shave <br className="hidden md:fles" />and feel like a gentleman.</p>
             </div>
 
         </section>
