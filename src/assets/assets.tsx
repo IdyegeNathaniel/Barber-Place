@@ -5,6 +5,7 @@ import trim from "./Trim.png"
 import logo from "./Logo.png"
 import profile_pic from "./profile_pic.png"
 import about from "./about.jpg"
+import about_us from "./About_us.jpg"
 
 export interface ServiceType{
     type: string;
@@ -13,6 +14,7 @@ export interface ServiceType{
 }
 
 export interface assetsType {
+    about_us: string;
     about: string;
     profile_pic: string;
     logo: string;
@@ -23,6 +25,7 @@ export interface assetsType {
 }
 
 export const assets: assetsType = {
+    about_us,
     about,
     profile_pic,
     logo,

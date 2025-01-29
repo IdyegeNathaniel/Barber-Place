@@ -10,14 +10,14 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false);
 
     return (
-        <nav className="bg-zinc-800 h-20 w-full flex justify-between items-center text-gray-300 px-8 md:px-12 py-2">
+        <nav className="bg-zinc-800 h-20 w-full flex justify-between items-center text-gray-300 px-8 md:px-12 py-2 border-b border-gray-700">
             <NavLink className="z-50" to={"/"}>
                 <img className="w-32 z-50" src={assets.logo} alt="image" />
             </NavLink>
             <ul className="hidden md:flex gap-8">
                 {
                     ["HOME", "SERVICES", "ABOUT US", "CONTACT"].map((item, index) => (
-                        <li key={index}><NavLink className={({ isActive }) => ` ${isActive ? "text-yellow-700 text-sm font-bold" : "text-gray-300 text-sm font-semibold"}`} to={index === 0 ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}>{item}</NavLink> <hr className="hidden" /></li>
+                        <li key={index}><NavLink className={({ isActive }) => ` ${isActive ? "text-amber-500 text-sm font-bold" : "text-gray-300 text-sm font-semibold"}`} to={index === 0 ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}>{item}</NavLink> <hr className="hidden" /></li>
                     ))
                 }
             </ul>

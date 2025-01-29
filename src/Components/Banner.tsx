@@ -9,10 +9,10 @@ const Banner = () => {
                     <img src={assets.about} alt="image" className="w-full absolute bottom-0 top-0" />
                 </div>
                 <div className="">
-                        <p className="text-yellow-700 text-4xl md:text-5xl"><span className="text-white">
+                        <p className="text-yellow-700 text-4xl md:text-3xl lg:text-5xl"><span className="text-white">
                             SERVICE</span> BEYOND<br /> EXPECTATION</p>
                         <hr className="border-gray-600 w-16  my-8" />
-                        <p className="mb-10 text-neutral-500 leading-5">Our BarberShop is the territory created for men <br /> who appreciate high quality, impeccable service,<br /> and the perfect look. Welcome to the BarberPlace</p>
+                        <p className="mb-10 text-neutral-500 leading-5 md:text-[10px] lg:text-base">Our BarberShop is the territory created for men <br /> who appreciate high quality, impeccable service,<br /> and the perfect look. Welcome to the BarberPlace</p>
                         <Link to={"/appointment"} className="border-4 border-yellow-700 text-sm text-white font-bold px-8 py-4 mt-5">Book an appointment</Link>                    
                 </div>
             </div>
