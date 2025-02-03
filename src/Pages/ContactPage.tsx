@@ -1,8 +1,10 @@
-import React from 'react'
+import { assets } from '../assets/assets'
 
 const ContactPage = () => {
     return (
-        <div>The ContactPage</div>
+        <section className="bg-zinc-800">
+            
+        </section>
     )
 }
 

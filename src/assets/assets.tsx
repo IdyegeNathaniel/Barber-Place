@@ -42,16 +42,7 @@ export interface galleryType{
 }
 
 export const assets: assetsType = {
-    hairstyle1,
-    hairstyle2,
-    hairstyle3,
-    hairstyle4,
-    hairstyle5,
-    hairstyle6,
-    hairstyle7,
-    hairstyle8,
-    hairstyle9,
-    hairstyle10,
+  
     about_us,
     about,
     profile_pic,
@@ -87,53 +78,53 @@ export const services: ServiceType[] = [
 
 export const gallery: galleryType[] = [
     { 
-        image: "hairstyle1",
+        image: hairstyle1,
         type: "Low Fade", 
-        price: "100" 
+        price: 100
     },
     { 
-        image: "hairstyle2",
+        image: hairstyle2,
         type: "Clean Cut", 
-        price: "200" 
+        price: 200 
     },
     { 
-        image: "hairstyle3",
+        image: hairstyle3,
         type: "Blend", 
-        price: "150" 
+        price: 150 
     },
     { 
-        image: "hairstyle4",
+        image: hairstyle4,
         type: "Blend", 
-        price: "150" 
+        price: 150 
     },
     { 
-        image: "hairstyle5",
+        image: hairstyle5,
         type: "Blend", 
-        price: "150"
+        price: 150
     },
     { 
-        image: "hairstyle6",
+        image: hairstyle6,
         type: "Blend", 
-        price: "150" 
+        price: 150 
     },
     { 
-        image: "hairstyle7",
+        image: hairstyle7,
         type: "Blend", 
-        price: "150" 
+        price: 150 
     },
     { 
-        image: "hairstyle8",
+        image: hairstyle8,
         type: "Blend", 
-        price: "150"
+        price: 150
     },
     { 
-        image: "hairstyle9",
+        image: hairstyle9,
         type: "Blend", 
-        price: "150" 
+        price: 150 
     },
     { 
-        image: "hairstyle10",
+        image: hairstyle10,
         type: "Blend", 
-        price: "150"
+        price: 150
     },
 ]
