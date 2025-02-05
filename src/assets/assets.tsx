@@ -76,6 +76,13 @@ export const services: ServiceType[] = [
     }
 ]
 
+export const service: any[] = [
+    'Fade Haircut',
+    'Beard Trim',
+    'Classic Shave',
+    'Full Grooming Package'
+]
+
 export const gallery: galleryType[] = [
     { 
         image: hairstyle1,
