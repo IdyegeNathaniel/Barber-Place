@@ -4,7 +4,12 @@ import Slider from "../Components/Slider"
 import { FaScissors } from "react-icons/fa6";
 
 
-interface BookingDetails {
+export interface TimeSlot {
+  label: string;
+  value: string;
+}
+
+export interface BookingDetails {
   selectService: string;
   date: string;
   time: string;
@@ -34,6 +39,43 @@ const ServicePage: React.FC = () => {
     console.log('Form Data:', formData)
   }
 
+
+
+  //GETTING CURRENT TIME
+  const getCurrentDate = (): string => {
+    const now = new Date();
+
+    return now.toISOString().split('T')[0];
+  };
+
+  //GETTING CURRENT TIME
+  const getAvailableTime = (): TimeSlot[] => {
+    const now = new Date();
+
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+
+    const timeSlots: TimeSlot[] = [
+      { value: '10:00', label: '10:00 AM' },
+      { value: '11:00', label: '11:00 AM' },
+      { value: '12:00', label: '12:00 PM' },
+      { value: '14:00', label: '2:00 PM' },
+      { value: '15:00', label: '3:00 PM' },
+      { value: '16:00', label: '4:00 PM' },
+      { value: '17:00', label: '5:00 PM' }
+    ];
+
+    return timeSlots.filter(slot => {
+      if (formData.date === getCurrentDate()) {
+        const [hours] = slot.value.split(':').map(Number);
+        return hours > currentHour ||
+          (hours === currentHour && 0 > currentMinute);
+      }
+      return true;
+    });
+  }
+
+
   return (
     <section className='bg-zinc-800 px-8 md:px-12 py-2'>
       <div className="max-w-md lg:max-w-5xl p-8 bg-zinc-900 mx-auto shadow-md rounded-md my-5 md:my-20">
@@ -41,7 +83,7 @@ const ServicePage: React.FC = () => {
         <form className="space-y-4 text-white" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="service" className="flex items-center mb-2 font-medium block">Select Service</label>
-            <select name="service" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer"  onChange={handleInputChange}>
+            <select name="service" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer" onChange={handleInputChange}>
               <option value="">Choose a Service</option>
               {
                 service.map((item, index) => (
@@ -51,17 +93,26 @@ const ServicePage: React.FC = () => {
             </select>
           </div>
 
+          {/* DATE AND TIME */}
           <div className="flex gap-10">
             <div className="w-1/2">
               <label htmlFor="date" className="flex items-center mb-2 font-medium block">Select date</label>
-              <input type="date" name="date" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer" value={formData.date} onChange={handleInputChange} />
+              <input type="date" name="date" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer" min={getCurrentDate()} value={formData.date} onChange={handleInputChange} />
             </div>
             <div className="w-1/2">
               <label htmlFor="time" className="flex items-center mb-2 font-medium block">Select Time</label>
-              <input type="time" name="time" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer" value={formData.time} onChange={handleInputChange} />
+              <select name="time" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer" value={formData.time} onChange={handleInputChange} disabled={!formData.date}>
+                <option value="">Pick a Time</option>
+                {
+                  getAvailableTime().map((slot) => (
+                    <option key={slot.value} value={slot.value}>{slot.label}</option>
+                  ))
+                }
+              </select>
             </div>
           </div>
 
+          {/* NAME */}
           <div>
             <label htmlFor="name" className="flex items-center mb-2 font-medium block">Enter Your Name</label>
             <input type="text" name="name" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2" value={formData.name} onChange={handleInputChange} />
@@ -72,7 +123,7 @@ const ServicePage: React.FC = () => {
             <input type="tel" name="phone" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2" value={formData.phone} onChange={handleInputChange} />
           </div>
 
-          <button className="w-full bg-amber-500 text-white p-3 rounded hover:bg-amber-600 transition-colors mt-2 font-semibold" type="submit">Book Appointment</button>
+          <button className="w-full bg-amber-500 text-white p-3 rounded hover:bg-amber-600 transition-colors mt-2 font-semibold" type="submit" disabled={!formData.selectService || !formData.date || !formData.time} >Book Appointment</button>
         </form>
       </div>
       <h1 className="text-amber-500 text-2xl md:text-3xl lg:text-4xl text-center font-medium">Our Gallery</h1>
