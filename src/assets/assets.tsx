@@ -77,10 +77,23 @@ export const services: ServiceType[] = [
 ]
 
 export const service: any[] = [
-    'Fade Haircut',
-    'Beard Trim',
-    'Classic Shave',
-    'Full Grooming Package'
+    {
+        type: 'Fade Haircut',
+        duration: "30"
+    },
+
+    {
+        type: 'Beard Trim',
+        duration: '20'
+    },
+    {
+        type: 'Classic Shave',
+        duration: "20"
+    },
+    {
+        type: 'Full Grooming Package',
+        duration: "60"
+    }
 ]
 
 export const gallery: galleryType[] = [
