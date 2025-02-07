@@ -4,14 +4,15 @@ import Footer from "../Components/Footer"
 
 
 const MainLayout = () => {
-    // const location = useLocation()
-    // const noFooterPath = ["/login"]
-    // const showFooter = !noFooterPath.includes(location.pathname)
+    const location = useLocation()
+    const noFooterPath = ["/login"]
+    const showFooter = !noFooterPath.includes(location.pathname)
     return (
         <>
             <Navbar />
             <Outlet />
-            <Footer />
+            {showFooter && <Footer />}
+
         </>
     )
 }
