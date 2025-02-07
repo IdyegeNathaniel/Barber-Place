@@ -1,4 +1,7 @@
+import { FaPhoneAlt } from "react-icons/fa"
 import { assets } from "../assets/assets"
+import { HiMail } from "react-icons/hi"
+import { FaLocationPin } from "react-icons/fa6"
 
 
 const AboutPage = () => {
@@ -43,6 +46,23 @@ const AboutPage = () => {
                             Tailored recommendations and reminders to help you stay on top of
                             your health.
                         </p>
+                    </div>
+                </div>
+                <h1 className="text-amber-500 text-xl font-bold">For More Enquiries</h1>
+                <div className="flex items-center flex-col md:flex-row my-10 gap-5">
+                    <div className="flex justify-center items-center text-neutral-300 border border-gray-400 rounded px-4 py-2">
+                        <FaPhoneAlt className="text-xl mr-2 text-indigo-500" />
+                        <h2>+234 81256 2564</h2>
+                    </div>
+                    
+                    <div className="flex justify-center items-center text-neutral-300 border border-gray-400 rounded px-4 py-2">
+                        <HiMail className="text-xl mr-2 text-indigo-500 " />
+                        <h2>thebarberplace@gmail.com</h2>
+                    </div>
+                    
+                    <div className="flex justify-center items-center text-neutral-300 border border-gray-400 rounded px-4 py-2">
+                        <FaLocationPin className="text-indigo-500 text-xl mr-2" />
+                        <h2>KM4 off mainland, There</h2>
                     </div>
                 </div>
             </div>

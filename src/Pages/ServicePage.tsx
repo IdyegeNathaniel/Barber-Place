@@ -1,13 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react"
-import { service } from "../assets/assets"
+import { service, TimeSlot, timeSlots } from "../assets/assets"
 import Slider from "../Components/Slider"
 import { FaScissors } from "react-icons/fa6";
 
-
-export interface TimeSlot {
-  label: string;
-  value: string;
-}
 
 export interface BookingDetails {
   selectService: string;
@@ -54,16 +49,6 @@ const ServicePage: React.FC = () => {
 
     const currentHour = now.getHours();
     const currentMinute = now.getMinutes();
-
-    const timeSlots: TimeSlot[] = [
-      { value: '10:00', label: '10:00 AM' },
-      { value: '11:00', label: '11:00 AM' },
-      { value: '12:00', label: '12:00 PM' },
-      { value: '14:00', label: '2:00 PM' },
-      { value: '15:00', label: '3:00 PM' },
-      { value: '16:00', label: '4:00 PM' },
-      { value: '17:00', label: '5:00 PM' }
-    ];
 
     return timeSlots.filter(slot => {
       if (formData.date === getCurrentDate()) {
@@ -123,7 +108,7 @@ const ServicePage: React.FC = () => {
             <input type="tel" name="phone" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2" value={formData.phone} onChange={handleInputChange} />
           </div>
 
-          <button className="w-full bg-amber-500 text-white p-3 rounded hover:bg-amber-600 transition-colors mt-2 font-semibold" type="submit" disabled={!formData.selectService || !formData.date || !formData.time} >Book Appointment</button>
+          <button className="w-full bg-amber-500 text-white p-3 rounded hover:bg-amber-600 transition-all duration-300 cursor-pointer mt-5 font-semibold" type="submit" disabled={!formData.selectService || !formData.date || !formData.time} >Book Appointment</button>
         </form>
       </div>
       <h1 className="text-amber-500 text-2xl md:text-3xl lg:text-4xl text-center font-medium">Our Gallery</h1>

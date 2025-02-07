@@ -16,7 +16,7 @@ const Navbar = () => {
             </NavLink>
             <ul className="hidden md:flex gap-8">
                 {
-                    ["HOME", "SERVICES", "ABOUT US", "CONTACT"].map((item, index) => (
+                    ["HOME", "BOOKING", "ABOUT US"].map((item, index) => (
                         <li key={index}><NavLink className={({ isActive }) => ` ${isActive ? "text-amber-500 text-sm font-bold" : "text-gray-300 text-sm font-semibold"}`} to={index === 0 ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}>{item}</NavLink> <hr className="hidden" /></li>
                     ))
                 }
@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
             <ul className={menu ? "absolute flex flex-col md:hidden top-0 right-0 items-center text-center justify-center gap-8 h-screen w-full bg-black z-20" : "hidden"}>
                 {
-                    ["HOME", "SERVICES", "ABOUT US", "CONTACT"].map((item, index) => (
+                    ["HOME", "BOOkING", "ABOUT US"].map((item, index) => (
                         <li key={index}><NavLink onClick={() => setMenu(prev => !prev)} className={({ isActive }) => ` ${isActive ? "text-green-700 text-sm font-bold" : "text-gray-300 text-sm font-semibold"}`} to={index === 0 ? "/" : `/${item.toLowerCase().replace(" ", "-")}`}>{item}</NavLink> <hr className="hidden" /></li>
                     ))
                 }
