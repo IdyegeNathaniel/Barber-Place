@@ -1,6 +1,6 @@
 
 
-const ProfilePage = () => {
+const ProfilePage: React.FC = () => {
   return (
     <div>The ProfilePage</div>
   )

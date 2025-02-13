@@ -1,13 +1,17 @@
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink, useLocation, useNavigate } from "react-router-dom"
 import { assets } from "../assets/assets"
 import { useState } from "react"
 import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
     const navigate = useNavigate()
+    //const Location = useLocation()
 
     const [token, setToken] = useState(true);
     const [menu, setMenu] = useState(false);
+    //const isRegPage = Location.pathname === "/login"
+
+    
 
     return (
         <nav className="bg-zinc-800 h-20 w-full flex justify-between items-center text-gray-300 px-8 md:px-12 py-2 border-b border-gray-700">

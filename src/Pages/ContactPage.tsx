@@ -1,6 +1,6 @@
 
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
     return (
         <section className="bg-zinc-800">
             

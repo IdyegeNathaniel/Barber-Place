@@ -4,7 +4,7 @@ import { HiMail } from "react-icons/hi"
 import { FaLocationPin } from "react-icons/fa6"
 
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
     return (
         <section className='bg-zinc-800 px-8 md:px-12 py-8'>
             <div className="container">

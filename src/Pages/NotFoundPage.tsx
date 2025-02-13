@@ -2,7 +2,7 @@ import { FaArrowLeft, FaExclamationTriangle } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
     return (
         <section className="h-96 flex flex-col items-center justify-center text-center gap-4">
 

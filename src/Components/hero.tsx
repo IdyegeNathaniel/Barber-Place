@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import bgImage from "/banner.jpg"
 
-const Hero = () => {
+const Hero: React.FC = () => {
 
     const navigate = useNavigate();
     const backGround = {

@@ -4,7 +4,7 @@ import { ChangeEvent, FormEvent, useState } from "react"
 export interface UserData {
   name: string;
   mail: string;
-  password: string; 
+  password: string;
 }
 
 const LoginPage: React.FC = () => {
@@ -15,19 +15,21 @@ const LoginPage: React.FC = () => {
     name: '',
     mail: '',
     password: ''
-  }) 
+  })
 
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {}
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    setUserData(prev => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
   }
 
   return (
     <section className="bg-zinc-800 px-8 md:px-12 py-2">
-      <form onSubmit={handleSubmit} className="min-h-[80vh] flex items-center my-10">
-        <div className="flex flex-col gap-6 m-auto items-start p-8 border min-w-[340ox] sm:min-w-96 rounded-xl text-white text-sm shadow-lg">
+      <form onSubmit={handleSubmit} className="min-h-[80vh] flex items-center my-5">
+        <div className="flex flex-col gap-6 m-auto items-start p-8 border border-zinc-500 min-w-[340ox] sm:min-w-96 rounded-xl text-white text-sm shadow-lg">
           <p className="text-2xl font-semibold ">
             {state === "Sign Up" ? "Create Account" : "Login"}
           </p>
@@ -43,7 +45,7 @@ const LoginPage: React.FC = () => {
                 onChange={handleInputChange}
                 value={userData.name}
                 name="name"
-                className="w-full border border-zinc-300 mt-1 p-2 rounded"
+                className="w-full border border-zinc-300 mt-1 p-2 text-black outline-none rounded"
                 required
               />
             </div>
@@ -55,7 +57,7 @@ const LoginPage: React.FC = () => {
               onChange={handleInputChange}
               value={userData.mail}
               name="email"
-              className="w-full border border-zinc-300 mt-1 p-2 rounded"
+              className="w-full border border-zinc-300 mt-1 p-2 rounded text-black outline-none "
               required
             />
           </div>
@@ -66,7 +68,7 @@ const LoginPage: React.FC = () => {
               onChange={handleInputChange}
               value={userData.password}
               name="password"
-              className="w-full border border-zinc-300 mt-1 p-2 rounded"
+              className="w-full border border-zinc-300 mt-1 p-2 rounded text-black outline-none "
               required
             />
           </div>

@@ -3,7 +3,7 @@ import Hero from "../Components/Hero"
 import Services from "../Components/Services"
 
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
     return (
         <>
             <Hero />

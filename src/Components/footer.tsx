@@ -1,6 +1,6 @@
 
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <section className="bg-zinc-800 text-amber-500">
         <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr_1fr] mx-20 gap-16 py-10">

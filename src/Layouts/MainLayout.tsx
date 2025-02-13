@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar"
 import Footer from "../Components/Footer"
 
 
-const MainLayout = () => {
+const MainLayout: React.FC = () => {
     const location = useLocation()
     const noFooterPath = ["/login"]
     const showFooter = !noFooterPath.includes(location.pathname)

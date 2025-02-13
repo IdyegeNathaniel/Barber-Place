@@ -1,6 +1,6 @@
 import { services } from "../assets/assets"
 
-const Services = () => {
+const Services: React.FC = () => {
     return (
         <section className="bg-zinc-800 py-20">
             <div className="container-xl md:container px-5 md:px-10 m-auto items-center justify-center text-center">

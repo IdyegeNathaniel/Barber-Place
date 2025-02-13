@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AppointmentPage = () => {
+const AppointmentPage: React.FC = () => {
     return (
         <div>The AppointmentPage</div>
     )
