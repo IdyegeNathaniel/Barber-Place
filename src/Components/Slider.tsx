@@ -1,41 +1,97 @@
+// import React, { useState } from 'react';
+// import { gallery } from '../assets/assets';
+// import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
-import { gallery } from "../assets/assets";
-import { Swiper, SwiperSlide } from "swiper/react";
 
+// interface ImageGalleryProps {
+//     initialIndex?: number;
+//     imageWidth?: number;
+//     imageHeight?: number;
+//     gap?: number
+// }
 
-import "swiper/css/bundle";
-import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+// const ImageGallery: React.FC<ImageGalleryProps> = ({
+//     initialIndex = 0,
+//     imageWidth = 300,
+//     imageHeight = 300,
+//     gap = 20
+// }) => {
+//     const [currentIndex, setCurrentIndex] = useState<number>(initialIndex);
 
-export default () => {
-    return (
-        <Swiper
-            effect={'coverflow'}
-            modules={[EffectCoverflow, Pagination, Navigation]}
-            grabCursor={true}
-            centeredSlides={true}
-            spaceBetween={50}
-            slidesPerView={2}
-            coverflowEffect={{
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            }}
-            pagination={{ clickable: true }}
-            navigation
-            className="w-full py-12">
+//     const nextSlide = (): void => {
+//         setCurrentIndex((prev) => (prev + 1) % gallery.length);
+//     };
 
-            {
-                gallery.map((item, index) => (
-                    <SwiperSlide className="flex items-center justify-center bg-center bg-cover w-[300px] h-[300px]" key={index}>
-                        <img src={item.image} alt="image" className="w-auto max-w-full" />
-                    </SwiperSlide>
-                ))
-            }
-        </Swiper>
-    )
-}
+//     const prevSlide = (): void => {
+//         setCurrentIndex((prev) => (prev - 1 + gallery.length) % gallery.length);
+//     };
+
+//     const handleDotClick = (index: number): void => {
+//         setCurrentIndex(index);
+//     };
+
+//     return (
+//         <div className="relative w-full max-w-4xl mx-auto py-12">
+//             <div className="overflow-hidden relative">
+//                 <div
+//                     className="flex transition-transform duration-300 ease-in-out"
+//                     style={{
+//                         transform: `translateX(-${currentIndex * 100}%)`,
+//                     }}
+//                 >
+//                     <div className="flex">
+//                         {gallery.map((item, index) => (
+//                             <div
+//                                 key={index}
+//                                 className={`relative min-w-full transform transition-transform duration-500
+//                                             ${index === currentIndex ? 'scale-100' : 'scale-90 opacity-75'}`}>
+//                                 <div className="flex items-center justify-center" style={{ padding: `${gap / 2}px` }}>
+//                                     <img
+//                                         src={item.image}
+//                                         alt='image'
+//                                         className="rounded-lg shadow-xl object-cover"
+//                                         style={{
+//                                             maxWidth: `${imageWidth}px`,
+//                                             height: `${imageHeight}px`
+//                                         }}
+//                                     />
+//                                 </div>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+//             </div>
+
+//             {/* Navigation Buttons */}
+//             <button
+//                 onClick={prevSlide}
+//                 aria-label="Previous slide"
+//                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg"
+//             >
+//                 <FaArrowLeft />
+//             </button>
+//             <button
+//                 onClick={nextSlide}
+//                 aria-label="Next slide"
+//                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg"
+//             >
+//               <FaArrowRight />
+//             </button>
+
+//             {/* Pagination Dots */}
+//             <div className="flex justify-center gap-2 mt-4">
+//                 {gallery.map((_, index) => (
+//                     <button
+//                         key={index}
+//                         onClick={() => handleDotClick(index)}
+//                         aria-label={`Go to slide ${index + 1}`}
+//                         className={`w-2 h-2 rounded-full transition-colors ${index === currentIndex ? 'bg-blue-600' : 'bg-gray-300'
+//                             }`}
+//                     />
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default ImageGallery;

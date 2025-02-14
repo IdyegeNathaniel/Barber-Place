@@ -14,7 +14,7 @@ const Banner: React.FC = () => {
                         SERVICE</span> BEYOND<br /> EXPECTATION</p>
                     <hr className="border-gray-600 w-16  my-8" />
                     <p className="mb-10 text-neutral-500 leading-5 md:text-[10px] lg:text-base">Our BarberShop is the territory created for men <br /> who appreciate high quality, impeccable service,<br /> and the perfect look. Welcome to the BarberPlace</p>
-                    <button onClick={() => {navigate("about-us"); scrollTo(0,0)}} className="border-4 border-yellow-700 text-sm text-white font-bold px-8 py-4 mt-5">More on US</button>
+                    <button onClick={() => { navigate("about-us"); scrollTo(0, 0) }} className="border-2 border-yellow-700 text-sm text-white font-bold px-8 py-4 mt-5 hover:bg-yellow-700 transition-all duration-500">More on Us</button>
                 </div>
             </div>
 

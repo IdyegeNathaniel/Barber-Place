@@ -56,7 +56,7 @@ const LoginPage: React.FC = () => {
               type="email"
               onChange={handleInputChange}
               value={userData.mail}
-              name="email"
+              name="mail"
               className="w-full border border-zinc-300 mt-1 p-2 rounded text-black outline-none "
               required
             />

@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { service, TimeSlot, timeSlots } from "../assets/assets"
-import Slider from "../Components/Slider"
+//import Slider from "../Components/Slider"
 import { FaScissors } from "react-icons/fa6";
 
 
@@ -113,8 +113,9 @@ const ServicePage: React.FC = () => {
       </div>
       <h1 className="text-amber-500 text-2xl md:text-3xl lg:text-4xl text-center font-medium">Our Gallery</h1>
       <p className="text-center text-gray-500 text-sm md:text-xm  mb-10">Go through our gallery and choose what style suits you best</p>
+      {/* GALLERY CAROUSEL */}
       <div className="relative mb-20">
-        <Slider />
+        {/* <Slider /> */}
       </div>
     </section>
 
