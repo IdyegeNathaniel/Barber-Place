@@ -67,7 +67,7 @@ const ServicePage: React.FC = () => {
         <h2 className="text-2xl font-bold text-amber-500 mb-6 flex items-center justify-center"><FaScissors className="mr-2 " /> Book Your Appointment</h2>
         <form className="space-y-4 text-white" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="service" className="flex items-center mb-2 font-medium block">Select Service</label>
+            <label htmlFor="service" className="flex items-center mb-2 font-medium ">Select Service</label>
             <select name="service" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer" onChange={handleInputChange}>
               <option value="">Choose a Service</option>
               {
@@ -81,11 +81,11 @@ const ServicePage: React.FC = () => {
           {/* DATE AND TIME */}
           <div className="flex gap-10">
             <div className="w-1/2">
-              <label htmlFor="date" className="flex items-center mb-2 font-medium block">Select date</label>
+              <label htmlFor="date" className="flex items-center mb-2 font-medium ">Select date</label>
               <input type="date" name="date" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer" min={getCurrentDate()} value={formData.date} onChange={handleInputChange} />
             </div>
             <div className="w-1/2">
-              <label htmlFor="time" className="flex items-center mb-2 font-medium block">Select Time</label>
+              <label htmlFor="time" className="flex items-center mb-2 font-medium ">Select Time</label>
               <select name="time" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2 cursor-pointer" value={formData.time} onChange={handleInputChange} disabled={!formData.date}>
                 <option value="">Pick a Time</option>
                 {
@@ -99,12 +99,12 @@ const ServicePage: React.FC = () => {
 
           {/* NAME */}
           <div>
-            <label htmlFor="name" className="flex items-center mb-2 font-medium block">Enter Your Name</label>
+            <label htmlFor="name" className="flex items-center mb-2 font-medium ">Enter Your Name</label>
             <input type="text" name="name" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2" value={formData.name} onChange={handleInputChange} />
           </div>
 
           <div>
-            <label htmlFor="phone" className="flex items-center mb-2 font-medium block">Phone Number</label>
+            <label htmlFor="phone" className="flex items-center mb-2 font-medium ">Phone Number</label>
             <input type="tel" name="phone" className="w-full bg-zinc-800 border border-zinc-700 outline-none p-2" value={formData.phone} onChange={handleInputChange} />
           </div>
 
