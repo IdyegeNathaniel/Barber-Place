@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import bgImage from "./Banner.jpg"
+import bgImage from "/banner.jpg"
 
 
 const Hero: React.FC = () => {
