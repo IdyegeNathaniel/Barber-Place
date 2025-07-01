@@ -4,19 +4,27 @@ import Slider from "react-slick";
 const ServiceSlide: React.FC<React.PropsWithChildren> = ({ children }) => {
     const settings = {
         dots: true,
+        arrows: false,
         infinite: true,
-        speed: 500,
-        slidesToShow: 1,
+        speed: 200,
+        slidesToShow: 3,
         slidesToScroll: 1,
-      };
+     
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+        ],
+      }
   return (
-    <div className="slider-container">
           <Slider {...settings}>
 
               {children}
 
           </Slider>
-    </div>
    
   )
 }
